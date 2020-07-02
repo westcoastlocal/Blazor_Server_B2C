@@ -1,12 +1,10 @@
-﻿@page "/counter"
+﻿@page "/claims"
 @using System.Security.Claims
 @using Microsoft.AspNetCore.Components.Authorization
 @inject AuthenticationStateProvider AuthenticationStateProvider
+<h3>Claims</h3>
 
-<h1>Counter</h1>
-
-<p>Current count: @currentCount</p>
-
+<button class="btn btn-primary" @onclick="GetClaimsAndValues">Get Claims</button>
 
 <p>This are all the claims included in the token sent from AD B2C </p>
 
@@ -25,10 +23,6 @@
 <p>@_surnameMessage</p>
 <p><strong>User Name is : @_email</strong></p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-primary" @onclick="GetClaimsAndValues">Get Claims</button>
-
-
 @code {
     private int currentCount = 0;
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
@@ -36,10 +30,6 @@
     private string _surnameMessage;
     private string _email;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
 
     private async Task GetClaimsAndValues()
     {

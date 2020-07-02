@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BlazorSB2C.Data;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace BlazorSB2C
 {
